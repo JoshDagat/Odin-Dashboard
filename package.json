@@ -1,0 +1,11 @@
+{
+  "name": "top-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard project for TOP Advanced HTML Course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josuer Bague",
+  "license": "ISC"
+}
