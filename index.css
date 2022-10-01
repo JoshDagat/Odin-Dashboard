@@ -187,16 +187,18 @@ li img {
 .content {
   display: grid;
   grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "projects announcements"
     "projects trending";
   gap: 16px;
   background-color: var(--color-grey);
+  padding: 16px;
 }
 
 .projects {
   grid-area: projects;
-  padding: 32px;
+  padding: 16px;
 }
 
 .projects h3 {
@@ -255,6 +257,40 @@ li img {
 
 .announcements {
   grid-area: announcements;
+  padding-top: 16px;
+  padding-right: 32px;
+}
+
+.announcements h3 {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.announcement h4 {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.announcement p {
+  font-size: 0.9rem;
+  color: var(--color-card-text);
+  margin-bottom: 15px;
+}
+
+.announcement hr {
+  color: white
+}
+
+.announcement-board {
+  box-shadow: -2px 2px 5px 0px var(--color-shadow);
+  -webkit-box-shadow: -2px 2px 5px 0px var(--color-shadow);
+  -moz-box-shadow: -2px 2px 5px 0px var(--color-shadow);
+  background-color: var(--color-white);
+  padding: 16px;
+  border-radius: 10px;
 }
 
 .trending {
