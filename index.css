@@ -119,6 +119,14 @@ li img {
   position: relative;
 }
 
+
+@media screen and (min-width: 700px) {
+  .header {
+    padding-bottom: 20px;
+  }
+
+}
+
 @media screen and (min-width: 992px) {
   .header {
     padding: 24px 75px 0px;
@@ -145,7 +153,7 @@ li img {
 
 @media screen and (min-width: 992px) {
   .searchbar {
-    width: 70%; 
+    width: 70%;
   }
 
 }
@@ -182,8 +190,7 @@ li img {
 
 .header-bottom {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .header-bottom .user-details {
@@ -195,11 +202,23 @@ li img {
   column-gap: 20px;
   row-gap: 5px;
   margin-right: auto;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 700px) {
+  .header-bottom {
+    flex-direction: row;
+  }
+
+  .header-bottom .user-details {
+    margin-bottom: unset;
+  }
 }
 
 .header-bottom .user-details .avatar {
   width: 70px;
   grid-area: avatar;
+  align-self: end;
 }
 
 .header-bottom .user-details>p {
@@ -219,8 +238,19 @@ li img {
 
 .user-actions {
   display: flex;
+  justify-content: space-between;
   gap: 16px;
-  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 700px) {
+  .user-actions {
+    width: unset;
+    margin-bottom: 0;
+    justify-content: start;
+    align-items: end;
+  }
 }
 
 .user-actions>button {
@@ -243,6 +273,8 @@ li img {
   font-size: 0.8rem;
   padding: 10px;
   border-radius: 25px;
+  width: 100%;
+  max-width: 165px;
 }
 
 /* Content */
