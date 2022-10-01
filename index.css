@@ -280,15 +280,21 @@ li img {
 /* Content */
 .content {
   grid-area: content;
-  display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "projects announcements"
-    "projects trending";
-  gap: 16px;
+
   background-color: var(--color-grey);
   padding: 16px;
+}
+
+@media screen and (min-width: 992px) {
+  .content {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "projects announcements"
+      "projects trending";
+    gap: 16px;
+  }
 }
 
 .projects {
@@ -302,12 +308,7 @@ li img {
   margin-bottom: 10px;
 }
 
-.project-board {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  overflow: auto;
-}
+
 
 .project-card {
   box-shadow: -2px 2px 5px 0px var(--color-shadow);
@@ -317,6 +318,20 @@ li img {
   padding: 32px;
   border-radius: 10px;
   position: relative;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 600px) {
+  .project-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    overflow: auto;
+  }
+
+  .project-card {
+    margin-bottom: 0;
+  }
 }
 
 .project-card::before {
@@ -352,8 +367,16 @@ li img {
 
 .announcements {
   grid-area: announcements;
-  padding-top: 16px;
-  padding-right: 32px;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 992px) {
+  .announcements {
+    padding: 0 32px 0 0;
+    margin-bottom: 0;
+  }
+
 }
 
 .announcements h3 {
@@ -390,7 +413,14 @@ li img {
 
 .trending {
   grid-area: trending;
-  padding-right: 32px;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 992px) {
+  .trending {
+    padding: 0 32px 0 0;
+  }
+
 }
 
 .trending-board {
