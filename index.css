@@ -295,4 +295,46 @@ li img {
 
 .trending {
   grid-area: trending;
+  padding-right: 32px;
+}
+
+.trending-board {
+  background-color: var(--color-white);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.trending h3 {
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.trending-user {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "avatar tag"
+    "avatar description";
+  column-gap: 16px;
+  margin-bottom: 24px;
+}
+
+.trending-user img {
+  object-fit: cover;
+  grid-area: avatar;
+}
+
+.trending-user span:first-of-type,
+.trending-user span:last-of-type {
+  grid-area: tag;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.trending-user span:last-of-type {
+  grid-area: description;
+  color: var(--color-card-text);
 }
