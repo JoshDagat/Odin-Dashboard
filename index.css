@@ -2,7 +2,10 @@
 
 :root {
   --color-white: #fff;
-  --color-blue: #318ce7;
+  --color-blue: #1992D4;
+  --color-btn-generic: #1992d4;
+  --color-grey: #E2E8F0;
+  --color-orange: #F0B42B;
 }
 
 body {
@@ -69,25 +72,94 @@ li img {
 .header {
   grid-area: header;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.25);
-  padding-left: 30px;
+  padding-left: 50px;
   padding-top: 24px;
+  padding-right: 75px;
 }
 
 .header-top {
   display: flex;
-}
-
-.header-bottom {
-  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .searchbar {
   display: flex;
+  gap: 20px;
+  width: 70%;
+  margin-right: auto;
 }
 
 .searchbar input {
+  width: 100%;
   border-radius: 25px;
-  border: 1px solid
+  border: none;
+  background-color: var(--color-grey);
+}
+
+.header-top .user-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.user {
+  font-weight: bold;
+}
+
+.avatar {
+  width: 40px;
+  border-radius: 100%;
+  grid-area: avatar;
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-bottom .user-details {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 2fr 2fr;
+  grid-template-areas: "avatar greeting"
+    "avatar name";
+  column-gap: 20px;
+  row-gap: 5px;
+  margin-right: auto;
+}
+
+.header-bottom .user-details .avatar {
+  width: 70px;
+  grid-area: avatar;
+}
+
+.header-bottom .user-details>p {
+  font-weight: bold;
+}
+
+.header-bottom .user-details>p:first-of-type {
+  grid-area: greeting;
+  font-size: 0.8rem;
+  align-self: end;
+}
+
+.header-bottom .user-details>p:last-of-type {
+  grid-area: name;
+  font-size: 1.25rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.user-actions>button {
+  min-width: 80px;
 }
 
 .btn-base {
@@ -96,4 +168,14 @@ li img {
   justify-content: center;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-generic {
+  background-color: var(--color-btn-generic);
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 10px;
+  border-radius: 25px;
 }
