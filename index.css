@@ -6,6 +6,8 @@
   --color-btn-generic: #1992d4;
   --color-grey: #E2E8F0;
   --color-orange: #F0B42B;
+  --color-shadow: #D7DCE4;
+  --color-card-text: #7D7D7D;
 }
 
 body {
@@ -71,7 +73,7 @@ li img {
 /* Header */
 .header {
   grid-area: header;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 2px -2px var(--color-shadow);
   padding-left: 50px;
   padding-top: 24px;
   padding-right: 75px;
@@ -178,4 +180,83 @@ li img {
   font-size: 0.8rem;
   padding: 10px;
   border-radius: 25px;
+}
+
+/* Content */
+
+.content {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-areas:
+    "projects announcements"
+    "projects trending";
+  gap: 16px;
+  background-color: var(--color-grey);
+}
+
+.projects {
+  grid-area: projects;
+  padding: 32px;
+}
+
+.projects h3 {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.project-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  overflow: auto;
+}
+
+.project-card {
+  box-shadow: -2px 2px 5px 0px var(--color-shadow);
+  -webkit-box-shadow: -2px 2px 5px 0px var(--color-shadow);
+  -moz-box-shadow: -2px 2px 5px 0px var(--color-shadow);
+  background-color: var(--color-white);
+  padding: 32px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.project-card::before {
+  content: "";
+  background-color: var(--color-orange);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.project-card h4 {
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.project-card p {
+  color: var(--color-card-text);
+  margin-bottom: 32px;
+}
+
+.project-card .actions {
+  float: right;
+}
+
+.project-card .actions img:not(:first-of-type) {
+  margin-left: 32px;
+}
+
+.announcements {
+  grid-area: announcements;
+}
+
+.trending {
+  grid-area: trending;
 }
