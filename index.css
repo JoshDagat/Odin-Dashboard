@@ -15,18 +15,19 @@ body {
   font-family: "Arial";
   position: relative;
 
-  /* desktop */
-  /* display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 4fr;
-  grid-template-areas:
-    "sidebar header"
-    "sidebar content"; */
-
-
 }
 
-
+@media screen and (min-width: 992px) {
+  body {
+    /* desktop */
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 200px 4fr;
+    grid-template-areas:
+      "sidebar header"
+      "sidebar content";
+  }
+}
 
 .header,
 .sidebar,
@@ -34,9 +35,7 @@ body {
   height: 100%;
 }
 
-.content {
-  grid-area: content;
-}
+
 
 /* Sidebar */
 .sidebar li {
@@ -75,6 +74,18 @@ body {
   margin-top: 6px;
 }
 
+@media screen and (min-width: 992px) {
+  .sidebar {
+    position: static;
+    transform: translateX(0);
+    transition: unset;
+  }
+
+  .btn-close {
+    display: none !important;
+  }
+}
+
 
 
 li img {
@@ -104,16 +115,19 @@ li img {
 .header {
   grid-area: header;
   box-shadow: 0 4px 2px -2px var(--color-shadow);
-  padding-left: 50px;
-  padding-top: 24px;
-  padding-right: 75px;
+  padding: 24px 30px 0px;
   position: relative;
 }
 
-/* 
-.menu {
-  position: absolute;
-} */
+@media screen and (min-width: 992px) {
+  .header {
+    padding: 24px 75px 0px;
+  }
+
+  .menu {
+    display: none !important;
+  }
+}
 
 .header-top {
   display: flex;
@@ -125,8 +139,15 @@ li img {
 .searchbar {
   display: flex;
   gap: 20px;
-  width: 70%;
+  width: 100%;
   margin-right: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .searchbar {
+    width: 70%; 
+  }
+
 }
 
 .searchbar input {
@@ -137,10 +158,16 @@ li img {
 }
 
 .header-top .user-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .header-top .user-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
 }
 
 .user {
@@ -219,8 +246,8 @@ li img {
 }
 
 /* Content */
-
 .content {
+  grid-area: content;
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 1fr 1fr;
