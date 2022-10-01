@@ -35,8 +35,6 @@ body {
   height: 100%;
 }
 
-
-
 /* Sidebar */
 .sidebar li {
   display: flex;
@@ -86,10 +84,61 @@ body {
   }
 }
 
+li:hover {
+  cursor: pointer;
+}
 
+li>span {
+  position: relative;
+}
+
+li>span:after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 115%;
+  left: 0;
+  border-radius: 5px;
+  width: 0%;
+  transition: width 0.25s ease-in-out;
+}
+
+li:hover>span:after {
+  width: 100%;
+}
 
 li img {
   margin-right: 28px;
+}
+
+li:hover img {
+  animation: shake 0.75s;
+}
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-0.5px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(1px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0);
+  }
 }
 
 .main-nav {
@@ -255,6 +304,11 @@ li img {
 
 .user-actions>button {
   min-width: 80px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.user-actions>button:hover {
+  transform: scale(1.1);
 }
 
 .btn-base {
@@ -359,6 +413,15 @@ li img {
 
 .project-card .actions {
   float: right;
+}
+
+.project-card .actions img {
+  transition: transform 0.25s ease-in-out;
+}
+
+.project-card .actions img:hover {
+  transform: scale(1.25);
+  cursor: pointer;
 }
 
 .project-card .actions img:not(:first-of-type) {
